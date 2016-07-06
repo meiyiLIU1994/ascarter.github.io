@@ -3,7 +3,6 @@ layout: default
 title: about
 ---
 
-<span id="about-portrait"><img src="images/about-portrait.jpg" alt="Portrait of Andrew Carter" /></span>
 
 My name is Liu Meiyi. I am a student from BUPT.
 
