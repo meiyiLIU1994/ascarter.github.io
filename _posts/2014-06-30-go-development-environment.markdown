@@ -10,16 +10,16 @@ date: '2014-06-30 10:22:40'
 
 @ 步骤：
 
-新建动态网页工程---搭载服务器---在WebContent包中新建Views Floder---将模板导入---在html后缀的文件中修改页面显示以及跳转---css后缀的文件修改布局和大小---svg后缀文件设置插入的矢量图形
+    新建动态网页工程---搭载服务器---在WebContent包中新建Views Floder---将模板导入---在html后缀的文件中修改页面显示以及跳转---css后缀的文件修改布局和大小---svg后缀文件设置插入的矢量图形
 
 
-（1）基本模板搭建：这里可以自己搭建，最初的话，恩，像我们这次，都是直接用的模板。参考Bootstrap中文网 http://v3.bootcss.com/getting-started/
+ （1）基本模板搭建：这里可以自己搭建，最初的话，恩，像我们这次，都是直接用的模板。参考Bootstrap中文网 http://v3.bootcss.com/getting-started/
 
-（2）导航条：在Eclipse里面通过对组件的设置，创建面板，设计导航条。参考Bootstrap中文网 http://v3.bootcss.com/components/#navbar
+ （2）导航条：在Eclipse里面通过对组件的设置，创建面板，设计导航条。参考Bootstrap中文网 http://v3.bootcss.com/components/#navbar
 
-（3）轮播：使用Javascript的插件Carousel。参考Bootstrap中文网 http://v3.bootcss.com/css/#grid  
+ （3）轮播：使用Javascript的插件Carousel。参考Bootstrap中文网 http://v3.bootcss.com/css/#grid  
 
-（4）内容布局：根据模板，对内容以及字体进行制作。
+ （4）内容布局：根据模板，对内容以及字体进行制作。
 
      利用全局CSS样式构造栅格系统，参考Bootstrap中文网 http://v3.bootcss.com/css/#grid
 
@@ -31,9 +31,9 @@ date: '2014-06-30 10:22:40'
 
      比如可以（4：4：4）也可以（4：3：2）总之相加不要超过12，当屏幕变小后原来一行4：4：4；变为了三行，每行占满屏幕。
 
-（5）标签页：同样可以使用Javascript插件制作标签页，参考Bootstrap中文网 http://v3.bootcss.com/css/#grid  
+ （5）标签页：同样可以使用Javascript插件制作标签页，参考Bootstrap中文网 http://v3.bootcss.com/css/#grid  
 
-（6）版权信息：这个在模板的基础上改一改就行了，大家都差不多的。
+ （6）版权信息：这个在模板的基础上改一改就行了，大家都差不多的。
 
 
 
