@@ -1,167 +1,43 @@
 ---
 layout: post
-title: Go Development Environment
-date: '2014-06-30 10:22:40'
+title: 如何制作个人网站by刘美亿
+date: '2016-07-08 10:22:40'
 ---
 
-Recently, I've started to work with the [Go][1] language. One initial point of confusion for me was how to use [workspaces][2]. They work a little different than other frameworks and languages.
+步骤：
+（1）基本模板搭建：这里可以自己搭建，最初的话，恩，像我们这次，都是直接用的模板。参考Bootstrap中文网 http://v3.bootcss.com/getting-started/
+（2）导航条：在Eclipse里面通过对组件的设置，创建面板，设计导航条。参考Bootstrap中文网 http://v3.bootcss.com/components/#navbar
+（3）轮播：使用Javascript的插件Carousel。参考Bootstrap中文网 http://v3.bootcss.com/css/#grid  
+（4）内容布局：根据模板，对内容以及字体进行制作。
+     利用全局CSS样式构造栅格系统，参考Bootstrap中文网 http://v3.bootcss.com/css/#grid
+     Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。
+     它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。
+     Bootstrap把页面等分为12列，你可以将你的内容放入任意行中；
+     比如可以（4：4：4）也可以（4：3：2）总之相加不要超过12，当屏幕变小后原来一行4：4：4；变为了三行，每行占满屏幕。
+（5）标签页：同样可以使用Javascript插件制作标签页，参考Bootstrap中文网 http://v3.bootcss.com/css/#grid  
+（6）版权信息：这个在模板的基础上改一改就行了，大家都差不多的。
 
-In simple terms, a workspace sets the context for running the go tool. Go is implemented by a suite of binaries similar to GCC. There is a compiler, linker and other tools for managing specific aspects of the Go workflow. On top of all of this is a tool called `go` that lets you use much simpler meta tasks like `build`, `install`, and `test`. For the high level tool to operate, it needs to have a context to work within. This includes where to find code and dependencies, where to build and install components, and generally set the state of the world.
 
-Many languages have the concept of a path. Python, Ruby, and Java all operate where you set an environment variable that lets the tools resolve where to find dependencies. Go has a similar concept. There are two primary environment variables that are used by the `go` tool. `GOROOT` is typically set to the location where the go binaries and standard libraries are installed. For example, on Mac OS X, this would be `/usr/local/go`. The second variable is `GOPATH`. This represents where you would put your code and any code you have pulled in as dependencies.
+推荐工具：
+（1）w3schools.com：是最受欢迎的前端技术教程网站，国内的中文翻译版本十分陈旧。可以在网上找个镜像，希望英文好的同学直接去看原版教程吧！
+（2）Bootstrap优站精选频道：收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+（3）Buttons CSS按钮样式库：一个基于 Sass 和 Compass 构建的CSS按钮（button）样式库，图标采用的是Font Awesome，可以和Bootstrap融合使用。
+（4）jQuery API中文手册：根据最新的 jQuery 1.11.x 和 2.1.x 版本翻译的 jQuery API 中文文档/手册。
+（5）Headroom.js隐藏或展示页面元素：一个轻量级、纯 JavaScript 组件，用来隐藏或展现页面上的元素，为你的页面留下更多展示内容的空间。
+（6）Responsive Nav响应式导航是一个很小的JS插件，压缩之后仅有1.7KB，能帮你创建针对小屏幕的可切换式导航。
 
-The `GOPATH` variable can have as many components as you like. It could be one location or several. It is up to you. This is where workspaces come in. A go workspace is effectively a working area that is composed of the following:
 
-    bin/
-    pkg/
-    src/
+根据我在模板基础上完成个人网站，有几个修改点以及注意事项：
+（1）<meta charset="utf-8"> 如果网页出现中文，需要设置html5的中文编码，否则会出现乱码。
+（2）<title>Curriculum Vitae of　Liu Meiyi</title>  设置网站左上角的那个标题。
+（3）<li><a class="btn" href="https://meiyiliu1994.github.io/archive.html">Blog</a></li> Blog按钮指向博客。
+（4）正文标题及签名：<a class="btn btn-action btn-lg"  href="https://meiyiliu1994.github.io/archive.html" role="button">CONTACT ME</a>  CONTACT ME 指向博客地址。
+（5）#符号表示本标签指向本页面。
+（6）Copyright &copy; 2016,  Designed by <a href="https://meiyiliu1994.github.io/archive.html" rel="designer">Liu Meiyi </a>  将LiuMeiyi指向博客地址。
+（7）<h1>表示一级标题，一般作为题目；<h2>二级标题；<table>制表符，对齐方式左对齐；<td 表示表格横行内容；width表示宽度；<p>是表示插入段落文章内容。
+（8）<p><img src="assets/images/5.jpg" alt="" class="img-rounded pull-right" width="200" >      插入图片 环绕方式 宽度为200。
 
-These three directories form the conventions that the go tool will use to find and build things. All paths are relative to the workspace root and component directory.
+Tips:在修改模板的过程中，锻炼了你查找东西的能力，根据功能找到对应的代码段，然后进行代码学习的能力，当然，还有PS的能力。
+     新建动态网页工程---搭载服务器---在WebContent包中新建Views Floder---将模板导入---在html后缀的文件中修改页面显示以及跳转---css后缀的文件修改布局和大小---svg后缀文件设置插入的矢量图形
 
-A more complete example would be like the following:
-
-    bin/
-      todo
-    pkg/
-      linux_amd64/
-        code.google.com/p/goauth2
-          oauth.a
-        github.com/nf/todo
-          task.a
-    src/
-      oauth/
-        oauth.go
-        oauth_test.go
-      github.com/nf/
-        todo/
-          task/
-            task.go
-          todo.go
-      ...
-
-Go recommends using repository paths as name spacing mechanism. Even if you never check in your code, using this layout makes things easier. The `GOPATH` is simply a list of all these workspaces you might want to use.
-
-So far so good - you have a way of collecting code and working with it. You have a mechanism for convenience tools to interact with it. You might be tempted to just make `~/Projects/my_gocode` and set that to `GOPATH` and put everything in there. That might be fine but anyone who has spent time working with code that involves external dependencies can tell you, that can get messy fast. Languages like Python and Ruby have helpers like [virtualenv][3] or [rbenv][4] for creating isolated environments. It seems like a useful idea in Go as well.
-
-Go has a different kind of package manager. It has similarities to [PyPi][5] or [Rubygems][6] but without a strong notion of versioning. Go strongly encourages using the latest version in master. There is no general versioning support. Whether that is good or not is still being debated. The `go` tool itself has a `get` command that will fetch the head of a dependency much like a package manager would. The key thing here is that it will fetch it to the first workspace on the `GOPATH`. Alternately, you could `git checkout` any version you wanted directly into `src/` to lock to a version or control it more precisely.
-
-With all that in mind, I wanted to give myself a little more flexibility. Conceptually putting everything in one place didn't feel right to me. I would prefer a little more flexibility and isolation. The nice thing is that `GOPATH` gives you all that power - you just need to set it.
-
-I created a simple workspace manager tool. I found several others (even with the same name) but none did quite what I wanted. I don't want a Go version of virtualenv or rbenv. That seems heavier than what I want. All I need is a more convenient way to switch my workspace context and then use all the standard Go tools.
-
-The tool I created is [goenv][7].
-
-    Go workspace manager
-
-    Usage:
-
-      goenv command [arguments]
-
-    The commands are:
-
-      init     initialize path as workspace (default working directory)
-      switch   switch workspace to path (default to working directory)
-      add      add path to workspace (default working directory)
-      rm       remove path from workspace (default working directory)
-      reset    reset to workspace to empty
-      list     list all workspace paths
-      which    show current Go workspace
-      env      environment variables for workspace
-
-    goenv manages the workspace by setting the GOPATH environment variable
-    When setting or adding a workspace, goenv will search up the path
-    to find the parent with the required GOPATH entries of bin, pkg, and
-    src
-
-Let's see an example workflow.
-
-You can create a new workspace by using `goenv init`. This will create a standard Go workspace layout (`bin/`, `pkg/`, `/src`) and add it to the `GOPATH`. The path to the workspace can be relative or absolute. The command `goenv list` shows all the active workspaces. The command `goenv env` is a short version of `go env` that is just the `GOROOT` and `GOPATH` currently set.
-
-    % goenv init myapp
-    
-    % cd myapp
-    
-    % goenv list
-    /Users/andrew/Projects/myapp
-
-    % goenv env
-    GOPATH=/Users/andrew/Projects/myapp
-    GOROOT=/usr/local/go
-
-With the `GOPATH` set, you can use standard go tool commands like `go get`. All workspaces added via `goenv` will have the `bin/` path added to the `PATH` so you can easily run any binaries you build.
-
-    % go get code.google.com/p/go.example/hello
-
-    % ls -l src/code.google.com/p/go.example/
-    total 24
-    -rw-r--r--  1 andrew  staff   1.4K Jun 30 09:36 LICENSE
-    -rw-r--r--  1 andrew  staff   1.3K Jun 30 09:36 PATENTS
-    -rw-r--r--  1 andrew  staff   102B Jun 30 09:36 codereview.cfg
-    drwxr-xr-x  3 andrew  staff   102B Jun 30 09:36 hello/
-    drwxr-xr-x  4 andrew  staff   136B Jun 30 09:36 newmath/
-
-    % ls bin/
-    hello*
-
-    % hello
-    Hello, world.  Sqrt(2) = 1.414213562373095
-
-Adding a second workspace works like before. If it already exists, `go add` will amend it. Alternately, if you use `go switch`, it will clear any currently set workspace and set it to only the new one you added.
-
-    % cd ..
-
-    % goenv init myapp2
-
-    % goenv list
-    /Users/andrew/Projects/myapp
-    /Users/andrew/Projects/myapp2
-
-Removing a workspace works like add.
-
-    % goenv rm myapp
-
-    % goenv list
-    /Users/andrew/Projects/myapp2
-
-If you are in a working directory, you can find the implied workspace with the `goenv which` command. This will walk up the path until it finds a go workspace root and either return that path or none if it isn't in a go workspace. This is how the `go add` and `go switch` methods determine it implicitly.
-
-    % cd myapp
-
-    % goenv which
-    /Users/andrew/Projects/myapp
-    
-    % cd src/code.google.com/p/go.example/hello
-
-    % goenv switch
-
-    % goenv list
-    /Users/andrew/Projects/myapp
-
-Also you can work with multiple paths.
-
-    % cd ~/Projects/myapp
-    
-    % goenv reset
-
-    % goenv list
-    Go workspace not set
-
-    % goenv add myapp myapp2
-
-    % goenv list
-    /Users/andrew/Projects/myapp
-    /Users/andrew/Projects/myapp2
-
-I'm finding this is about all I've needed for managing workspaces. It is convenient to set the context and use the built in tools. Additionally, it is easily transferrable to a Make file in that you simply would need to set the `GOPATH` and the rest would fall out. Like a lot of Go, the simplicity is a little misleading at first but it is elegant when you wrap your head around it.
-
-For [BBEdit][8] users, I'm working on a [Go.bbpackage][9] that includes some similar ideas for running go commands on the current document. Since BBEdit will run each in a new shell context, the workspace is always dynamically found and used. I'm not sure yet if or how I want to bubble up some of the more complicated methods.
-
-[1]: http://golang.org
-[2]: http://tip.golang.org/doc/code.html
-[3]: https://pypi.python.org/pypi/virtualenv
-[4]: http://rbenv.org
-[5]: http://pypi.python.org/pypi
-[6]: http://rubygems.org
-[7]: http://github.com/ascarter/goenv
-[8]: http://barebones.com/products/bbedit/
-[9]: https://github.com/ascarter/Go.bbpackage
+启动服务器的时候如果发现提示端口被占用，直接进cmd，输入命令netstat -ano，查看对应的TCP中哪个程序占用的，记住PID号，然后打开任务管理器，在查看里面调出PID，然后找到对应的进程，删掉就可以了。
