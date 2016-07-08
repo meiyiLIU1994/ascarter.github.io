@@ -35,7 +35,7 @@ date: '2016-07-08 10:22:40'
 （5）#符号表示本标签指向本页面。
 （6）Copyright &copy; 2016,  Designed by <a href="https://meiyiliu1994.github.io/archive.html" rel="designer">Liu Meiyi </a>  将LiuMeiyi指向博客地址。
 （7）<h1>表示一级标题，一般作为题目；<h2>二级标题；<table>制表符，对齐方式左对齐；<td 表示表格横行内容；width表示宽度；<p>是表示插入段落文章内容。
-（8）<p><img src="assets/images/5.jpg" alt="" class="img-rounded pull-right" width="200" >      插入图片 环绕方式 宽度为200。
+（8）<p><img src="assets/images/5.jpg" alt="" class="img-rounded pull-right" width="200" >   插入图片 环绕方式 宽度为200。
 
 Tips:在修改模板的过程中，锻炼了你查找东西的能力，根据功能找到对应的代码段，然后进行代码学习的能力，当然，还有PS的能力。
      新建动态网页工程---搭载服务器---在WebContent包中新建Views Floder---将模板导入---在html后缀的文件中修改页面显示以及跳转---css后缀的文件修改布局和大小---svg后缀文件设置插入的矢量图形
