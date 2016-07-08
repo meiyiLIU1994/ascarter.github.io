@@ -1,12 +1,15 @@
 ---
 layout: post
-title: Reboot
+title: personal website
 date: 2009-12-31 22:05:00
 ---
 
 步骤：
+
 （1）基本模板搭建：这里可以自己搭建，最初的话，恩，像我们这次，都是直接用的模板。参考Bootstrap中文网 http://v3.bootcss.com/getting-started/
+
 （2）导航条：在Eclipse里面通过对组件的设置，创建面板，设计导航条。参考Bootstrap中文网 http://v3.bootcss.com/components/#navbar
+
 （3）轮播：使用Javascript的插件Carousel。参考Bootstrap中文网 http://v3.bootcss.com/css/#grid  
 （4）内容布局：根据模板，对内容以及字体进行制作。
      利用全局CSS样式构造栅格系统，参考Bootstrap中文网 http://v3.bootcss.com/css/#grid
