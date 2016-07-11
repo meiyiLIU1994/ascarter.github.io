@@ -61,6 +61,9 @@ date: 2016-07-08 22:05:00
 
 （6）Responsive Nav响应式导航是一个很小的JS插件，压缩之后仅有1.7KB，能帮你创建针对小屏幕的可切换式导航。
 
+教学视频
+<embed src="http://player.youku.com/player.php/sid/XMTYzOTIxODgwNA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
 
 
 Tips:在修改模板的过程中，锻炼了你查找东西的能力，根据功能找到对应的代码段，然后进行代码学习的能力，当然，还有PS的能力。
