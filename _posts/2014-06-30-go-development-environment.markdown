@@ -78,7 +78,9 @@ date: '2014-06-30 10:22:40'
 <embed src="http://player.youku.com/player.php/sid/XMTYzOTIxODgwNA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 
 
+视频链接：
 
+http://v.youku.com/v_show/id_XMTYzOTIxODgwNA==.html
 
 @ Tips:在修改模板的过程中，锻炼了你查找东西的能力，根据功能找到对应的代码段，然后进行代码学习的能力，当然，还有PS的能力。
 
